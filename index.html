@@ -7,6 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    
     <style>
         :root { 
             --msccf-green: #006a4e; 
@@ -19,23 +20,34 @@
         .navbar { background: white !important; border-bottom: 1px solid #eee; padding: 15px 0; }
         .navbar-brand { font-weight: 800; color: var(--msccf-green) !important; }
 
-        /* Hero: Logo Center */
-        .hero { background: #fbfbfb; padding: 80px 0; text-align: center; border-bottom: 1px solid #eee; }
-        .main-logo { max-height: 180px; margin-bottom: 25px; filter: drop-shadow(0 10px 15px rgba(0,0,0,0.1)); }
-        .hero h1 { font-weight: 800; margin-bottom: 10px; }
-        .hero p { color: #666; font-size: 1.1rem; font-style: italic; }
+        /* Hero: Bigger Centered Logo */
+        .hero { background: #fbfbfb; padding: 100px 0; text-align: center; border-bottom: 1px solid #eee; }
+        .main-logo { 
+            width: 280px; 
+            height: auto; 
+            margin-bottom: 30px; 
+            filter: drop-shadow(0 15px 25px rgba(0,0,0,0.15)); 
+        }
+        .hero h1 { font-weight: 800; font-size: 2.5rem; margin-bottom: 10px; }
+        .hero p { color: #666; font-size: 1.3rem; font-style: italic; }
 
-        /* Quiz Slot - Interactive */
-        .quiz-section { background: white; margin-top: -40px; padding: 40px; border-radius: 20px; border: 1px solid #eee; box-shadow: 0 15px 35px rgba(0,0,0,0.08); z-index: 10; position: relative; }
-        .btn-quiz { background: var(--msccf-red); color: white; border: none; padding: 12px 35px; border-radius: 50px; font-weight: 700; transition: 0.3s; }
+        /* Quiz Slot */
+        .quiz-section { 
+            background: white; margin-top: -50px; padding: 50px; border-radius: 25px; 
+            border: 1px solid #eee; box-shadow: 0 20px 40px rgba(0,0,0,0.1); 
+            z-index: 10; position: relative; 
+        }
+        .btn-quiz { background: var(--msccf-red); color: white; border: none; padding: 15px 45px; border-radius: 50px; font-weight: 700; transition: 0.3s; }
         .btn-quiz:hover { transform: scale(1.05); background: var(--msccf-green); }
+        .option-btn { border-radius: 10px; padding: 12px; font-weight: 600; transition: 0.2s; margin-bottom: 10px; border: 2px solid #eee; }
+        .option-btn:hover { border-color: var(--msccf-green); background: #f0fff0; }
 
         /* Vertical Activity Slots */
         .activity-slot { 
             display: flex; align-items: center; background: #fff; border-radius: 15px; 
             padding: 25px; margin-bottom: 20px; border: 1px solid #f0f0f0; transition: 0.3s; 
         }
-        .activity-slot:hover { border-color: var(--msccf-red); transform: translateX(10px); }
+        .activity-slot:hover { border-color: var(--msccf-red); transform: translateX(10px); background: #fffafa; }
         .slot-icon { font-size: 35px; min-width: 70px; height: 70px; background: #f9f9f9; display: flex; align-items: center; justify-content: center; border-radius: 12px; margin-right: 20px; }
         .slot-content h5 { font-weight: 700; color: var(--msccf-green); margin-bottom: 5px; }
         .slot-content p { margin: 0; color: #777; font-size: 0.9rem; }
@@ -47,26 +59,28 @@
 
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="#">MONIPUR SCHOOL AND COLLEGE CULTURAL FORUM</a>
+            <a class="navbar-brand" href="#">MSCCF OFFICIAL</a>
             <button class="btn btn-dark btn-sm px-4 rounded-pill fw-bold">LOGIN</button>
         </div>
     </nav>
 
     <header class="hero">
         <div class="container">
-            <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcR6k1HZ8mwPlNxEUXUqKMNWGEIa5wSX8dtXACNeo0Vmaz7S_EEx" alt="MSCCF Logo" class="main-logo" onerror="this.src='https://via.placeholder.com/180?text=MSCCF+LOGO'">
-            <h1>Monipur School & College Cultural Forum</h1>
+            <img src="logo.png" alt="MSCCF Logo" class="main-logo" onerror="this.src='https://via.placeholder.com/280?text=MSCCF+LOGO'">
+            <h1>Monipur High School & College</h1>
             <p>"সংস্কৃতি মোদের ঐক্যবদ্ধতা"</p>
         </div>
     </header>
 
     <section class="container">
         <div class="row justify-content-center">
-            <div class="col-lg-7 quiz-section text-center">
-                <h4 class="fw-bold" style="color: var(--msccf-green);">🎭 Cultural Quiz Challenge</h4>
-                <p id="q-text" class="text-muted">Test your knowledge and get a celebration blast!</p>
-                <div id="q-options" class="d-grid gap-2 col-md-8 mx-auto mb-3"></div>
-                <button class="btn-quiz" onclick="startQuiz()">TAKE A QUIZ</button>
+            <div class="col-lg-8 quiz-section text-center">
+                <h3 class="fw-bold mb-3" style="color: var(--msccf-green);">🎭 Cultural Quiz Challenge</h3>
+                <div id="quiz-box">
+                    <p id="q-text" class="text-muted lead">Test your cultural knowledge! Click below to start.</p>
+                    <div id="q-options" class="d-grid gap-2 col-md-10 mx-auto mt-4"></div>
+                </div>
+                <button id="start-btn" class="btn-quiz mt-3" onclick="startQuiz()">TAKE A QUIZ</button>
             </div>
         </div>
     </section>
@@ -77,23 +91,23 @@
             <div class="col-lg-8">
                 <div class="activity-slot">
                     <div class="slot-icon">🎤</div>
-                    <div class="slot-content"><h5>Music Wing</h5><p>Vocal performances and classical instruments.</p></div>
+                    <div class="slot-content"><h5>Music Wing</h5><p>Vocal excellence and instrumental heritage.</p></div>
                 </div>
                 <div class="activity-slot">
                     <div class="slot-icon">🎨</div>
-                    <div class="slot-content"><h5>Art & Visuals</h5><p>Sketching, painting, and digital media displays.</p></div>
+                    <div class="slot-content"><h5>Art & Visuals</h5><p>Painting, sketching, and digital art exhibitions.</p></div>
                 </div>
                 <div class="activity-slot">
                     <div class="slot-icon">💃</div>
-                    <div class="slot-content"><h5>Dance Society</h5><p>Traditional folk and contemporary stage dance.</p></div>
+                    <div class="slot-content"><h5>Dance Society</h5><p>Folk, classical, and modern stage performances.</p></div>
                 </div>
                 <div class="activity-slot">
                     <div class="slot-icon">🎭</div>
-                    <div class="slot-content"><h5>Drama & Theatre</h5><p>Stage acting, scriptwriting, and performance arts.</p></div>
+                    <div class="slot-content"><h5>Drama & Theatre</h5><p>Acting workshops and scriptwriting.</p></div>
                 </div>
                 <div class="activity-slot">
                     <div class="slot-icon">🎥</div>
-                    <div class="slot-content"><h5>Media Production</h5><p>IT media, cinematography, and digital coverage.</p></div>
+                    <div class="slot-content"><h5>Media Production</h5><p>Cinematography, IT, and official coverage.</p></div>
                 </div>
             </div>
         </div>
@@ -102,34 +116,61 @@
     <footer class="text-center">
         <div class="container small">
             <p class="mb-1">Monipur High School & College Cultural Forum</p>
-            <p class="opacity-50">VP of IT & Media Development | 2026</p>
+            <p class="opacity-50">VP of IT & Media Development Portfolio</p>
         </div>
     </footer>
 
     <script>
-        // Confetti on Load
+        // Opening Confetti
         function launchCelebration() {
-            confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 }, colors: ['#ed1c24', '#006a4e', '#ffffff'] });
+            confetti({
+                particleCount: 150,
+                spread: 100,
+                origin: { y: 0.6 },
+                colors: ['#006a4e', '#ed1c24', '#ffffff']
+            });
         }
 
-        // Quiz Logic
+        // 12 Cultural Quizzes
         const questions = [
-            { q: "Who is the national poet of Bangladesh?", o: ["Rabindranath", "Kazi Nazrul", "Lalon"], c: 1 },
-            { q: "Which flower is our national symbol?", o: ["Rose", "Water Lily", "Lotus"], c: 1 }
+            { q: "Who is the national poet of Bangladesh?", o: ["Rabindranath Tagore", "Kazi Nazrul Islam", "Jasmin Uddin"], c: 1 },
+            { q: "What is the national flower of Bangladesh?", o: ["Rose", "Water Lily", "Lotus"], c: 1 },
+            { q: "Which month is Pohela Boishakh celebrated?", o: ["Boishakh", "Ashar", "Chaitra"], c: 0 },
+            { q: "Who wrote 'Amar Sonar Bangla'?", o: ["Kazi Nazrul", "Rabindranath Tagore", "Lalon Shah"], c: 1 },
+            { q: "What is the national fruit of Bangladesh?", o: ["Mango", "Jackfruit", "Banana"], c: 1 },
+            { q: "Which of these is a traditional Bengali instrument?", o: ["Guitar", "Ektara", "Piano"], c: 1 },
+            { q: "What is the national fish of Bangladesh?", o: ["Hilsha", "Rohu", "Catla"], c: 0 },
+            { q: "In which year did the Language Movement happen?", o: ["1947", "1952", "1971"], c: 1 },
+            { q: "Who is known as 'Polli Kobi'?", o: ["Jasimuddin", "Farrukh Ahmad", "Kazi Nazrul"], c: 0 },
+            { q: "What is the traditional dress for men in festivals?", o: ["Suit", "Panjabi", "T-Shirt"], c: 1 },
+            { q: "Which of these is a famous folk song type?", o: ["Bhatiali", "Jazz", "Pop"], c: 0 },
+            { q: "Who is the 'Shilpacharya' of Bangladesh?", o: ["Zainul Abedin", "SM Sultan", "Hashem Khan"], c: 0 }
         ];
 
         function startQuiz() {
+            document.getElementById('start-btn').style.display = 'none';
             const data = questions[Math.floor(Math.random() * questions.length)];
-            document.getElementById('q-text').innerHTML = <strong>${data.q}</strong>;
+            document.getElementById('q-text').innerHTML = <span style="font-size: 1.4rem; color: var(--msccf-black); font-weight: 700;">${data.q}</span>;
             const optBox = document.getElementById('q-options');
-            optBox.innerHTML = '';
+            optBox.innerHTML = ''; 
+            
             data.o.forEach((opt, i) => {
                 const btn = document.createElement('button');
-                btn.className = "btn btn-outline-dark btn-sm fw-bold";
+                btn.className = "btn btn-light option-btn";
                 btn.innerText = opt;
                 btn.onclick = () => {
-                    if(i === data.c) { launchCelebration(); alert("Correct! 🎉"); }
-                    else alert("Try again! 😊");
+                    if(i === data.c) {
+                        launchCelebration();
+                        alert("🎉 Correct Answer!");
+                        setTimeout(() => {
+                           document.getElementById('start-btn').style.display = 'inline-block';
+                           document.getElementById('start-btn').innerText = "NEXT QUESTION";
+                           optBox.innerHTML = '';
+                           document.getElementById('q-text').innerText = "Ready for the next one?";
+                        }, 800);
+                    } else {
+                        alert("❌ Try Again!");
+                    }
                 };
                 optBox.appendChild(btn);
             });
