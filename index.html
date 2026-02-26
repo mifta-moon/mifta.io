@@ -1,153 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta name="google-site-verification" content="ZB3QJadUQqfSexczQCVrbT7R4MLt7oWAwOjjv0FpdME" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="ZB3QJadUQqfSexczQCVrbT7R4MLt7owAwOjjvOFpdME" />
     
-    <meta name="description" content="Official website of Monipur High School and College Cultural Forum (MSCCF). Discover our wings, events, and cultural heritage.">
-    <meta name="keywords" content="MSCCF, Monipur High School and College, Cultural Forum, Monipur School Club, Mirpur, Dhaka Cultural Club">
+    <meta name="description" content="Official website of Monipur High School and College Cultural Forum (MSCCF).">
     <title>MSCCF | Monipur High School & College Cultural Forum</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     
     <style>
-        body { font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
-        :root { --mubc-red: #8B0000; --mubc-gold: #FFD700; }
+        body { font-family: 'Poppins', sans-serif; background-color: #fcfcfc; }
+        :root { --msccf-maroon: #800000; --msccf-gold: #FFD700; }
         
-        .navbar { background-color: var(--mubc-red) !important; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
-        .nav-link { font-weight: 500; color: white !important; }
-        
-        .hero { 
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1514525253361-bee8a48740d0?auto=format&fit=crop&w=1920&q=80'); 
-            background-size: cover; background-position: center; color: white; padding: 150px 0;
+        .navbar { background-color: var(--msccf-maroon) !important; border-bottom: 3px solid var(--msccf-gold); padding: 15px 0; }
+        .navbar-brand { font-weight: 700; color: white !important; letter-spacing: 1px; }
+        .nav-link { color: white !important; margin: 0 10px; font-weight: 500; transition: 0.3s; }
+        .nav-link:hover { color: var(--msccf-gold) !important; }
+
+        .hero-section { 
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?auto=format&fit=crop&w=1200'); 
+            background-size: cover; background-position: center; color: white; padding: 120px 0; text-align: center;
         }
 
-        .section-title { color: var(--mubc-red); font-weight: 700; margin-bottom: 40px; text-transform: uppercase; letter-spacing: 2px; }
-        .card-wing { border: none; border-bottom: 5px solid var(--mubc-red); transition: 0.3s; background: #f8f9fa; }
-        .card-wing:hover { transform: translateY(-10px); background: white; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-        
-        .form-section { background: #f4f4f4; padding: 80px 0; }
-        .footer { background: #222; color: white; padding: 40px 0; }
+        .section-title { color: var(--msccf-maroon); font-weight: 700; position: relative; padding-bottom: 10px; margin-bottom: 40px; }
+        .section-title::after { content: ''; position: absolute; width: 60px; height: 3px; background: var(--msccf-gold); bottom: 0; left: 50%; transform: translateX(-50%); }
+
+        .facility-card { border: none; transition: 0.3s; background: white; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .facility-card:hover { transform: translateY(-8px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        .card-icon { font-size: 2.5rem; color: var(--msccf-maroon); margin-bottom: 15px; }
+
+        .footer { background: #1a1a1a; color: #ccc; padding: 40px 0; margin-top: 50px; }
+        .btn-msccf { background-color: var(--msccf-maroon); color: white; border: 2px solid var(--msccf-gold); padding: 12px 30px; font-weight: 600; }
+        .btn-msccf:hover { background-color: var(--msccf-gold); color: var(--msccf-maroon); }
     </style>
 </head>
 <body>
 
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="#">MSCCF</a>
+            <a class="navbar-brand" href="#">MSCCF OFFICIAL</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#about">About MSCCF</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="#facilities">Facilities</a></li>
                     <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#join">Join Forum</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#join">Join Us</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <header class="hero text-center">
+    <header class="hero-section">
         <div class="container">
-            <h1 class="display-3 fw-bold">Welcome to MSCCF</h1>
-            <p class="lead mb-4">Preserving Tradition, Inspiring Talent at Monipur High School and College.</p>
-            <a href="#join" class="btn btn-warning btn-lg px-5 fw-bold text-dark">GET MEMBERSHIP</a>
+            <h1 class="display-3 fw-bold">Monipur School & College</h1>
+            <h2 class="h1 mb-4" style="color: var(--msccf-gold);">Cultural Forum (MSCCF)</h2>
+            <p class="lead mb-5 px-md-5">Preserving Tradition, Inspiring Talent. Join the most prestigious cultural community of Monipur High School and College.</p>
+            <a href="#join" class="btn btn-msccf">BECOME A MEMBER</a>
         </div>
     </header>
 
-    <section id="about" class="container py-5 my-5 text-center">
-        <h2 class="section-title">About the Forum</h2>
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <p class="lead text-muted">
-                    The Monipur High School and College Cultural Forum (MSCCF) is the premier organization dedicated to nurturing the artistic and cultural potential of our students. We bridge the gap between academic excellence and creative expression.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <section id="facilities" class="container py-5">
+    <section id="facilities" class="container py-5 mt-5">
         <h2 class="section-title text-center">Our Facilities & Wings</h2>
-        <div class="row g-4">
+        <div class="row g-4 mt-2">
             <div class="col-md-4">
-                <div class="card h-100 p-4 card-wing">
-                    <h4 class="fw-bold">Music & Vocals</h4>
-                    <p>Professional training in classical, folk, and modern songs with expert guidance.</p>
+                <div class="card h-100 p-4 facility-card text-center">
+                    <div class="card-icon">🎭</div>
+                    <h4>Drama & Theatre</h4>
+                    <p class="text-muted">Mastering the art of stage performance and script writing through professional workshops.</p>
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="card h-100 p-4 card-wing">
-                    <h4 class="fw-bold">Dance & Choreography</h4>
-                    <p>Dedicated studio space for practicing traditional and contemporary dance forms.</p>
+                <div class="card h-100 p-4 facility-card text-center">
+                    <div class="card-icon">🎤</div>
+                    <h4>Vocal & Music</h4>
+                    <p class="text-muted">Nurturing voices in classical, folk, and modern songs with expert mentorship.</p>
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="card h-100 p-4 card-wing">
-                    <h4 class="fw-bold">Drama & Theatre</h4>
-                    <p>A platform for stage acting, scriptwriting, and performing arts production.</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card h-100 p-4 card-wing">
-                    <h4 class="fw-bold">Debate & Literature</h4>
-                    <p>Weekly workshops on public speaking, logic, and creative writing contests.</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card h-100 p-4 card-wing">
-                    <h4 class="fw-bold">Art & Multimedia</h4>
-                    <p>A wing focused on digital media, photography, and fine arts exhibitions.</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card h-100 p-4 card-wing">
-                    <h4 class="fw-bold">Auditorium Access</h4>
-                    <p>Exclusive access to school auditorium facilities for rehearsals and programs.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="gallery" class="container py-5 text-center">
-        <h2 class="section-title">Event Highlights</h2>
-        <div class="row g-2">
-            <div class="col-md-3 col-6"><img src="https://via.placeholder.com/400x300" class="img-fluid rounded" alt="MSCCF Event"></div>
-            <div class="col-md-3 col-6"><img src="https://via.placeholder.com/400x300" class="img-fluid rounded" alt="MSCCF Event"></div>
-            <div class="col-md-3 col-6"><img src="https://via.placeholder.com/400x300" class="img-fluid rounded" alt="MSCCF Event"></div>
-            <div class="col-md-3 col-6"><img src="https://via.placeholder.com/400x300" class="img-fluid rounded" alt="MSCCF Event"></div>
-        </div>
-    </section>
-
-    <section id="join" class="form-section">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-6 card p-5 shadow">
-                    <h2 class="text-center mb-4 fw-bold" style="color:var(--mubc-red)">Member Application</h2>
-                    <form action="#" method="POST">
-                        <div class="mb-3">
-                            <label class="form-label">Student Name</label>
-                            <input type="text" class="form-control" required>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Student ID / Roll</label>
-                            <input type="text" class="form-control" required>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Interested Wing</label>
-                            <select class="form-select">
-                                <option>Music</option>
-                                <option>Dance</option>
-                                <option>Drama</option>
-                                <option>Debate</option>
-                                <option>Media</option>
-                            </select>
-                        </div>
-                        <button type="submit" class="btn btn-dark w-100 py-2 fw-bold">SUBMIT APPLICATION</button>
-                    </form>
+                <div class="card h-100 p-4 facility-card text-center">
+                    <div class="card-icon">💃</div>
+                    <h4>Dance Wing</h4>
+                    <p class="text-muted">Exploring the beauty of traditional and contemporary dance forms.</p>
                 </div>
             </div>
         </div>
@@ -155,8 +94,10 @@
 
     <footer class="footer text-center">
         <div class="container">
-            <p class="mb-0">&copy; 2026 Monipur High School & College Cultural Forum (MSCCF). All Rights Reserved.</p>
-            <small>Monipur, Mirpur-2, Dhaka, Bangladesh.</small>
+            <h5 class="text-white mb-3">MSCCF - Monipur High School & College</h5>
+            <p>Mirpur, Dhaka, Bangladesh</p>
+            <hr style="border-color: #444; width: 50%; margin: 20px auto;">
+            <p class="small mb-0">&copy; 2026 MSCCF. All Rights Reserved. | Site Built for IT & Media Wing</p>
         </div>
     </footer>
 
