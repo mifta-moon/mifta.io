@@ -3,93 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MSCCF</title>
+    <title>MSCCF OFFICIAL</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     
     <style>
-        :root { --green: #006a4e; --red: #ed1c24; }
-        body { font-family: sans-serif; text-align: center; background: #fff; }
+        :root { --green: #006a4e; --red: #ed1c24; --black: #1a1a1a; }
+        body { font-family: 'Inter', sans-serif; text-align: center; background: #fff; margin: 0; padding: 0; }
         
-        /* Logo Styling */
-        .logo-container { padding: 50px 0; background: #f9f9f9; border-bottom: 2px solid #eee; }
-        .main-logo { width: 320px; height: auto; display: block; margin: 0 auto; }
-
-        /* Quiz Styling */
-        .quiz-box { 
-            max-width: 600px; margin: -30px auto 40px; padding: 30px; 
-            background: #fff; border: 2px solid var(--green); border-radius: 20px; 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1); position: relative; z-index: 10;
+        /* Logo Fix: Specific for your FB Link */
+        .logo-container { padding: 40px 20px; background: #fdfdfd; border-bottom: 2px solid #eee; }
+        .main-logo { 
+            width: 250px; /* Large size for impact */
+            height: auto; 
+            display: block; 
+            margin: 0 auto;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
-        .btn-main { background: var(--red); color: #fff; border: none; padding: 12px 40px; border-radius: 50px; font-weight: bold; cursor: pointer; }
-        .opt-btn { width: 100%; margin: 8px 0; padding: 12px; border: 1px solid #ddd; border-radius: 10px; background: #fcfcfc; font-weight: 600; cursor: pointer; }
-        .opt-btn:hover { border-color: var(--green); background: #e6f3ef; }
 
-        /* Activities Styling */
+        /* Quiz Box Styling */
+        .quiz-box { 
+            max-width: 500px; margin: -30px auto 40px; padding: 25px; 
+            background: #fff; border: 2px solid var(--green); border-radius: 20px; 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1); position: relative; z-index: 10;
+        }
+        .btn-main { background: var(--red); color: #fff; border: none; padding: 15px 0; border-radius: 50px; font-weight: bold; font-size: 1.1rem; width: 80%; cursor: pointer; transition: 0.3s; }
+        .opt-btn { width: 100%; margin: 8px 0; padding: 12px; border: 1px solid #ddd; border-radius: 12px; background: #fcfcfc; font-weight: 600; cursor: pointer; }
+
+        /* Activities Section - Vertical */
         .activity-item { 
             display: flex; align-items: center; text-align: left; 
-            padding: 20px; margin: 15px auto; max-width: 600px; 
-            border: 1px solid #eee; border-radius: 15px; transition: 0.3s; 
+            padding: 18px; margin: 12px auto; max-width: 550px; 
+            border: 1px solid #eee; border-radius: 15px; background: #fff;
+            transition: 0.3s;
         }
-        .activity-item:hover { border-color: var(--red); transform: translateX(10px); }
-        .act-icon { font-size: 35px; margin-right: 20px; min-width: 60px; text-align: center; }
+        .activity-item:hover { transform: translateX(10px); border-color: var(--red); }
+        .act-icon { font-size: 32px; margin-right: 20px; min-width: 50px; text-align: center; }
+        .act-text h5 { margin: 0; font-weight: 800; color: var(--black); }
+        .act-text p { margin: 0; font-size: 0.85rem; color: #666; }
     </style>
 </head>
 <body onload="fireConfetti()">
 
     <div class="logo-container">
-        <img src="https://scontent.fjsr1-2.fna.fbcdn.net/v/t39.30808-6/424818750_897432785719798_885820496158870334_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=1d70fc&_nc_ohc=x07iAaDecrsQ7kNvwGcyikR&_nc_oc=Adl6uyUoox3zzxklh5Nvmj_94FWKnDxlmwBLr_09zoQ0JBaN0r8oKMJFfMk0tXp1I9npsNgeb78vB-HJVfyeOQYo&_nc_zt=23&_nc_ht=scontent.fjsr1-2.fna&_nc_gid=I99yTYbtxXvAja8t_5Sxxw&oh=00_Afu3KILHHM36vUUywsaJ6rGpvzy8TOaA4KG2MhwNoaXrNQ&oe=69A68341" alt="MSCCF Logo" class="main-logo" id="logo">
-        <h2 style="margin-top:20px; font-weight:800;">Monipur High School & College cultural forum</h2>
+        <img src="https://scontent.fjsr1-2.fna.fbcdn.net/v/t39.30808-6/424818750_897432785719798_885820496158870334_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=1d70fc&_nc_ohc=x07iAaDecrsQ7kNvwGcyikR&_nc_oc=Adl6uyUoox3zzxklh5Nvmj_94FWKnDxlmwBLr_09zoQ0JBaN0r8oKMJFfMk0tXp1I9npsNgeb78vB-HJVfyeOQYo&_nc_zt=23&_nc_ht=scontent.fjsr1-2.fna&_nc_gid=I99yTYbtxXvAja8t_5Sxxw&oh=00_Afu3KILHHM36vUUywsaJ6rGpvzy8TOaA4KG2MhwNoaXrNQ&oe=69A68341" 
+             alt="MSCCF Logo" class="main-logo" id="msccfLogo">
+        <h2 style="margin-top:20px; font-weight:900; letter-spacing: -1px;">Monipur High School & College</h2>
         <p style="color:var(--red); font-weight:bold;">"সংস্কৃতি মোদের ঐক্যবদ্ধতা"</p>
     </div>
 
-    <div class="container">
+    <div class="container px-4">
         <div class="quiz-box">
-            <h4 style="color:var(--green); margin-bottom:20px;">Cultural Quiz Challenge</h4>
+            <h4 style="color:var(--green); margin-bottom:15px; font-weight: 800;">Cultural Quiz Challenge</h4>
             <div id="quiz-area">
-                <p id="q-text">Test your cultural knowledge here!</p>
+                <p id="q-text" class="text-muted">Test your cultural knowledge here!</p>
                 <div id="q-options"></div>
             </div>
             <button id="start-btn" class="btn-main" onclick="runQuiz()">TAKE A QUIZ</button>
         </div>
     </div>
 
-    <div class="container pb-5">
-        <h3 style="margin-bottom:30px; font-weight:800;">Forum Activities</h3>
-        <div class="activity-item"> <div class="act-icon">🎤</div> <div><h5>Music Wing</h5><p class="m-0 text-muted">Vocal and Instrumental</p></div> </div>
-        <div class="activity-item"> <div class="act-icon">🎨</div> <div><h5>Art & Visuals</h5><p class="m-0 text-muted">Fine Arts and Graphics</p></div> </div>
-        <div class="activity-item"> <div class="act-icon">💃</div> <div><h5>Dance Society</h5><p class="m-0 text-muted">Traditional and Modern</p></div> </div>
-        <div class="activity-item"> <div class="act-icon">🎭</div> <div><h5>Drama & Theatre</h5><p class="m-0 text-muted">Stage Acting and Scripts</p></div> </div>
-        <div class="activity-item"> <div class="act-icon">🎥</div> <div><h5>Media Production</h5><p class="m-0 text-muted">IT and Cinematography</p></div> </div>
+    <div class="container pb-5 px-4">
+        <h4 style="margin-bottom:25px; font-weight:900; text-transform: uppercase; color: var(--green);">Forum Activities</h4>
+        <div class="activity-item"> <div class="act-icon">🎤</div> <div class="act-text"><h5>Music Wing</h5><p>Vocal and Instrumental Performances</p></div> </div>
+        <div class="activity-item"> <div class="act-icon">🎨</div> <div class="act-text"><h5>Art & Visuals</h5><p>Fine Arts and Digital Design</p></div> </div>
+        <div class="activity-item"> <div class="act-icon">💃</div> <div class="act-text"><h5>Dance Society</h5><p>Traditional and Modern Dance</p></div> </div>
+        <div class="activity-item"> <div class="act-icon">🎭</div> <div class="act-text"><h5>Drama & Theatre</h5><p>Stage Acting and Playwriting</p></div> </div>
+        <div class="activity-item"> <div class="act-icon">🎥</div> <div class="act-text"><h5>Media Production</h5><p>IT Media and Cinematography</p></div> </div>
     </div>
 
     <script>
-        // Confetti Blast on Open
         function fireConfetti() {
             confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 }, colors: ['#006a4e', '#ed1c24'] });
         }
 
-        // 12 Quiz Questions
         const quizBank = [
             { q: "National Poet of Bangladesh?", o: ["Rabindranath", "Nazrul", "Jasimuddin"], c: 1 },
             { q: "National Flower?", o: ["Rose", "Water Lily", "Lotus"], c: 1 },
             { q: "National Fruit?", o: ["Mango", "Jackfruit", "Banana"], c: 1 },
-            { q: "Who wrote the National Anthem?", o: ["Nazrul", "Rabindranath", "Lalon"], c: 1 },
-            { q: "What is the national fish?", o: ["Hilsha", "Rohu", "Magur"], c: 0 },
             { q: "Language Movement Year?", o: ["1947", "1952", "1971"], c: 1 },
             { q: "Independence Day?", o: ["16 Dec", "21 Feb", "26 March"], c: 2 },
+            { q: "Who wrote 'Amar Sonar Bangla'?", o: ["Nazrul", "Rabindranath", "Lalon"], c: 1 },
+            { q: "Which month is Pohela Boishakh?", o: ["Boishakh", "Ashar", "Chaitra"], c: 0 },
+            { q: "National Fish of Bangladesh?", o: ["Hilsha", "Rohu", "Magur"], c: 0 },
+            { q: "Who is known as 'Polli Kobi'?", o: ["Jasimuddin", "Farrukh Ahmad", "Kazi Nazrul"], c: 0 },
+            { q: "Traditional instrument?", o: ["Guitar", "Ektara", "Piano"], c: 1 },
             { q: "Victory Day?", o: ["16 Dec", "21 Feb", "26 March"], c: 0 },
-            { q: "Famous Folk Instrument?", o: ["Guitar", "Ektara", "Piano"], c: 1 },
-            { q: "Traditional dress for women?", o: ["Saree", "Gown", "Frock"], c: 0 },
-            { q: "Traditional dress for men?", o: ["Suit", "Panjabi", "Jeans"], c: 1 },
-            { q: "Famous Art Maestro?", o: ["Zainul Abedin", "SM Sultan", "Both"], c: 2 }
+            { q: "Who is the 'Shilpacharya'?", o: ["Zainul Abedin", "SM Sultan", "Hashem Khan"], c: 0 }
         ];
 
         function runQuiz() {
             const data = quizBank[Math.floor(Math.random() * quizBank.length)];
             document.getElementById('start-btn').style.display = 'none';
             document.getElementById('q-text').innerHTML = "<strong>" + data.q + "</strong>";
-            
             const optionsDiv = document.getElementById('q-options');
             optionsDiv.innerHTML = '';
             
@@ -101,10 +108,8 @@
                     if(i === data.c) {
                         fireConfetti();
                         alert("Correct! 🎉");
-                        setTimeout(() => { location.reload(); }, 500);
-                    } else {
-                        alert("Wrong! Try again.");
-                    }
+                        setTimeout(() => { location.reload(); }, 600);
+                    } else { alert("Wrong! Try again."); }
                 };
                 optionsDiv.appendChild(btn);
             });
